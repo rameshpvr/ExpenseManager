@@ -1,10 +1,12 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row'
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col'
 import CustomButton from './CustomButton';
 
 function Footer(props) {
 
-    const buttonList = [
+   /*  const buttonList = [
         {
             key: 'successbtn',
             label: 'Add Money (+)',
@@ -19,12 +21,12 @@ function Footer(props) {
             handler : 'popShow',
             input : ''
         }
-    ];
+    ]; */
 
     return (
         <Row style={{ 'marginTop': "20px" }}>
           {
-              buttonList.map((buttonInfo) => {
+              /* buttonList.map((buttonInfo) => {
                   return(
                       <CustomButton
                         key={buttonInfo.key}
@@ -34,9 +36,14 @@ function Footer(props) {
                       >
                       </CustomButton>
                   )
-              })
+              }) */
           }
-          
+          <Col>
+            <Button variant="success" onClick={() => props.popShow("Add")}>Add Money (+)</Button>
+          </Col>
+          <Col>
+            <Button variant="danger" onClick={() => props.popShow()}>Spended Money (-)</Button>
+          </Col>
         </Row>
     )
 }
